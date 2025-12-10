@@ -312,51 +312,64 @@
                     <!-- Admission Form -->
                     <div class="contact-form-card">
                         <h3>Admission Enquiry</h3>
-                        <form id="admissionForm">
-                            <div class="form-group">
-                                <label for="childName" class="sr-only">Child's Name</label>
-                                <input type="text" id="childName" name="childName" placeholder="Child's Name" required>
-                                <span class="error-msg">Please enter child's name</span>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="childAge" class="sr-only">Age</label>
-                                    <input type="number" id="childAge" name="childAge" placeholder="Age" min="1"
-                                        max="10" required>
-                                    <span class="error-msg">Please enter valid age</span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="classApplying" class="sr-only">Class</label>
-                                    <select id="classApplying" name="classApplying" required>
-                                        <option value="" disabled selected>Select Class</option>
-                                        <option value="Playgroup">Playgroup</option>
-                                        <option value="Nursery">Nursery</option>
-                                        <option value="LKG">LKG</option>
-                                        <option value="UKG">UKG</option>
-                                        <option value="Class 1">Class 1</option>
-                                    </select>
-                                    <span class="error-msg">Please select a class</span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="parentName" class="sr-only">Parent's Name</label>
-                                <input type="text" id="parentName" name="parentName" placeholder="Parent's Name"
-                                    required>
-                                <span class="error-msg">Please enter parent's name</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="mobileNumber" class="sr-only">Mobile Number</label>
-                                <input type="tel" id="mobileNumber" name="mobileNumber"
-                                    placeholder="Mobile Number (10 digits)" pattern="[0-9]{10}" required>
-                                <span class="error-msg">Please enter valid 10-digit number</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="message" class="sr-only">Message</label>
-                                <textarea id="message" name="message" rows="3"
-                                    placeholder="Any message? (Optional)"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-block">Send Enquiry</button>
-                            <p id="formStatus" class="form-status" aria-live="polite" tabindex="-1"></p>
+                      <form id="enquiryFormWA">
+    <div class="form-group">
+        <input id="childName" type="text" placeholder="Child's Name" required>
+    </div>
+
+    <div class="form-group">
+        <input id="age" type="number" placeholder="Age" required>
+    </div>
+
+    <div class="form-group">
+        <select id="classSelect" required>
+            <option value="">Select Class</option>
+            <option value="Playgroup">Playgroup</option>
+            <option value="Nursery">Nursery</option>
+            <option value="LKG">LKG</option>
+            <option value="UKG">UKG</option>
+            <option value="Class 1">Class 1</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <input id="parentName" type="text" placeholder="Parent's Name" required>
+    </div>
+
+    <div class="form-group">
+        <input id="mobile" type="tel" placeholder="Mobile Number" required>
+    </div>
+
+    <div class="form-group">
+        <textarea id="message" placeholder="Any message (Optional)"></textarea>
+    </div>
+
+    <button type="button" class="btn btn-primary" id="sendWA">Send Enquiry</button>
+</form>
+
+<script>
+document.getElementById("sendWA").onclick = function () {
+    let child = document.getElementById("childName").value;
+    let age = document.getElementById("age").value;
+    let cls = document.getElementById("classSelect").value;
+    let parent = document.getElementById("parentName").value;
+    let mobile = document.getElementById("mobile").value;
+    let msg = document.getElementById("message").value;
+
+    let text =
+      "New Admission Enquiry:%0A%0A" +
+      "Child: " + child + "%0A" +
+      "Age: " + age + "%0A" +
+      "Class: " + cls + "%0A" +
+      "Parent: " + parent + "%0A" +
+      "Mobile: " + mobile + "%0A" +
+      "Message: " + msg;
+
+    let url = "https://wa.me/919142015565?text=" + text;
+    window.open(url, "_blank");
+};
+</script>
+
                         </form>
                     </div>
                 </div>
@@ -455,5 +468,6 @@
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </body>
+
 
 </html>
