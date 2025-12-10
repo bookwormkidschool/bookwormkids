@@ -278,7 +278,64 @@
             <img src="images/clipart_globe_book.png" alt="Globe on Books" class="clipart-img clipart-globe">
         </section>
 
-        <!-- Contact Section (Previously ID gallery was confusing) -->
+        <!-- Google Reviews Section -->
+        <section id="reviews" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Parents Love Us</h2>
+                    <div class="google-rating">
+                        <span class="g-logo"><span class="blue">G</span><span class="red">o</span><span
+                                class="yellow">o</span><span class="blue">g</span><span class="green">l</span><span
+                                class="red">e</span> Rating</span>
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+                        <span class="score">4.9/5.0</span>
+                    </div>
+                </div>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="reviewer-header">
+                            <div class="reviewer-pic" style="background-color: #EF5350;">A</div>
+                            <div class="reviewer-info">
+                                <h4>Amit Kumar</h4>
+                                <span class="review-date">2 weeks ago</span>
+                            </div>
+                            <img src="images/google_icon.png" alt="Google" class="g-icon-small">
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p>Best playschool in Nawada! My son Rahul loves the activities. Teachers are very caring.</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="reviewer-header">
+                            <div class="reviewer-pic" style="background-color: #42A5F5;">P</div>
+                            <div class="reviewer-info">
+                                <h4>Priya Singh</h4>
+                                <span class="review-date">1 month ago</span>
+                            </div>
+                            <img src="images/google_icon.png" alt="Google" class="g-icon-small">
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p>Wonderful environment. The curriculum is very creative and safe for small kids. Highly
+                            recommended.</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="reviewer-header">
+                            <div class="reviewer-pic" style="background-color: #FFCA28;">R</div>
+                            <div class="reviewer-info">
+                                <h4>Ravi Verma</h4>
+                                <span class="review-date">2 months ago</span>
+                            </div>
+                            <img src="images/google_icon.png" alt="Google" class="g-icon-small">
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <p>Great facilities and huge playground. My daughter has learned so much in just 6 months.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
         <section id="contact" class="section bg-primary-light">
             <div class="container">
                 <div class="section-header text-white">
@@ -307,69 +364,66 @@
                             <p><a href="https://www.instagram.com/bookwormskills/" target="_blank"
                                     rel="noopener">@bookwormskills</a></p>
                         </div>
+
+                        <!-- Map Embed -->
+                        <div class="map-wrapper"
+                            style="margin-top: 20px; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                            <iframe
+                                src="https://maps.google.com/maps?q=Bookworm+Library,+Nawada,+Bihar&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen=""
+                                aria-hidden="false" tabindex="0">
+                            </iframe>
+                        </div>
                     </div>
 
                     <!-- Admission Form -->
                     <div class="contact-form-card">
                         <h3>Admission Enquiry</h3>
-                      <form id="enquiryFormWA">
-    <div class="form-group">
-        <input id="childName" type="text" placeholder="Child's Name" required>
-    </div>
-
-    <div class="form-group">
-        <input id="age" type="number" placeholder="Age" required>
-    </div>
-
-    <div class="form-group">
-        <select id="classSelect" required>
-            <option value="">Select Class</option>
-            <option value="Playgroup">Playgroup</option>
-            <option value="Nursery">Nursery</option>
-            <option value="LKG">LKG</option>
-            <option value="UKG">UKG</option>
-            <option value="Class 1">Class 1</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <input id="parentName" type="text" placeholder="Parent's Name" required>
-    </div>
-
-    <div class="form-group">
-        <input id="mobile" type="tel" placeholder="Mobile Number" required>
-    </div>
-
-    <div class="form-group">
-        <textarea id="message" placeholder="Any message (Optional)"></textarea>
-    </div>
-
-    <button type="button" class="btn btn-primary" id="sendWA">Send Enquiry</button>
-</form>
-
-<script>
-document.getElementById("sendWA").onclick = function () {
-    let child = document.getElementById("childName").value;
-    let age = document.getElementById("age").value;
-    let cls = document.getElementById("classSelect").value;
-    let parent = document.getElementById("parentName").value;
-    let mobile = document.getElementById("mobile").value;
-    let msg = document.getElementById("message").value;
-
-    let text =
-      "New Admission Enquiry:%0A%0A" +
-      "Child: " + child + "%0A" +
-      "Age: " + age + "%0A" +
-      "Class: " + cls + "%0A" +
-      "Parent: " + parent + "%0A" +
-      "Mobile: " + mobile + "%0A" +
-      "Message: " + msg;
-
-    let url = "https://wa.me/919142015565?text=" + text;
-    window.open(url, "_blank");
-};
-</script>
-
+                        <form id="admissionForm">
+                            <div class="form-group">
+                                <label for="childName" class="sr-only">Child's Name</label>
+                                <input type="text" id="childName" name="childName" placeholder="Child's Name" required>
+                                <span class="error-msg">Please enter child's name</span>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="childAge" class="sr-only">Age</label>
+                                    <input type="number" id="childAge" name="childAge" placeholder="Age" min="1"
+                                        max="10" required>
+                                    <span class="error-msg">Please enter valid age</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="classApplying" class="sr-only">Class</label>
+                                    <select id="classApplying" name="classApplying" required>
+                                        <option value="" disabled selected>Select Class</option>
+                                        <option value="Playgroup">Playgroup</option>
+                                        <option value="Nursery">Nursery</option>
+                                        <option value="LKG">LKG</option>
+                                        <option value="UKG">UKG</option>
+                                        <option value="Class 1">Class 1</option>
+                                    </select>
+                                    <span class="error-msg">Please select a class</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="parentName" class="sr-only">Parent's Name</label>
+                                <input type="text" id="parentName" name="parentName" placeholder="Parent's Name"
+                                    required>
+                                <span class="error-msg">Please enter parent's name</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="mobileNumber" class="sr-only">Mobile Number</label>
+                                <input type="tel" id="mobileNumber" name="mobileNumber"
+                                    placeholder="Mobile Number (10 digits)" pattern="[0-9]{10}" required>
+                                <span class="error-msg">Please enter valid 10-digit number</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="sr-only">Message</label>
+                                <textarea id="message" name="message" rows="3"
+                                    placeholder="Any message? (Optional)"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Send Enquiry</button>
+                            <p id="formStatus" class="form-status" aria-live="polite" tabindex="-1"></p>
                         </form>
                     </div>
                 </div>
@@ -468,6 +522,5 @@ document.getElementById("sendWA").onclick = function () {
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </body>
-
 
 </html>
